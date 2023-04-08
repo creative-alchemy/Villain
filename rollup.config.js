@@ -27,11 +27,11 @@ export default {
   },
   plugins: [
     peerDepsExternal(),
-    postcss({
-      extract: './dist/style.css',
-      modules: false,
-      minimize: true,
-    }),
+    // postcss({
+    //   extract: './dist/style.css',
+    //   modules: false,
+    //   minimize: true,
+    // }),
     babel({
       exclude: 'node_modules/**',
     }),

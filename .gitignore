@@ -62,7 +62,3 @@ build/test_files
 
 # IDE files
 .idea/
-
-
-# Deploy for github pages
-.deploy/

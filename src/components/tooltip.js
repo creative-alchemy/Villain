@@ -8,7 +8,9 @@ const Tooltip = React.forwardRef(
     const tooltipState = useTooltipState({ placement, unstable_animated: true })
 
     const handleAnimationRest = () => {
-      tooltipState.unstable_stopAnimation()
+      if (!tooltipState.unstable_stopAnimation) return
+      if (typeof tooltipState.unstable_stopAnimation === 'function')
+        tooltipState.unstable_stopAnimation()
     }
 
     const [{ opacity }, updateTooltipSpring, stopTooltipSpring] = useSpring(() => ({

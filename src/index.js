@@ -8,7 +8,7 @@ import UncompressConsumer from '@/components/uncompress'
 import CanvasRenderConsumer from '@/components/render'
 import { ReaderContext, ReaderProvider } from '@/context'
 // Styles
-import '@/css'
+// import '@/css'
 
 const Villain = ({ source, style, className, options, workerUrl }) => {
   return (
