@@ -82,7 +82,8 @@ const BaseMenu = React.forwardRef(
 
     const handleAnimationRest = () => {
       setAnimationState(false)
-      menu.unstable_stopAnimation()
+      if (!menu.unstable_stopAnimation) return
+      if (typeof menu.unstable_stopAnimation === 'function') menu.unstable_stopAnimation()
     }
 
     const [menuAnimatedProps, updateMenuSpring, stopMenuSpring] = useSpring(() => ({
