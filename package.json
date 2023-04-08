@@ -1,6 +1,6 @@
 {
   "name": "villain-react",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "An open source web based comic book reader as a react component",
   "main": "./dist/villain.js",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/btzr-io/Villain.git"
+    "url": "git+https://github.com/creative-alchemy/Villain.git"
   },
   "files": [
     "dist/"
@@ -27,9 +27,9 @@
   "author": "Baltazar Gomez",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/btzr-io/Villain/issues"
+    "url": "https://github.com/creative-alchemy/Villain/issues"
   },
-  "homepage": "https://github.com/btzr-io/Villain#readme",
+  "homepage": "https://github.com/creative-alchemy/Villain#readme",
   "jest": {
     "setupFilesAfterEnv": [
       "<rootDir>test/setupTests.js"
