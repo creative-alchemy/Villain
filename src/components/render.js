@@ -171,8 +171,12 @@ class CanvasRender extends React.Component {
       this.updateZoomLimits();
     });
 
-    this.viewer.addHandler("canvas-press", ({ position, pointerType }) => {
-      console.log({ pointerType, position });
+    this.viewer.addHandler("canvas-press", ({ position }) => {
+      console.log({ position });
+    });
+
+    this.viewer.addHandler("canvas-click", ({ position }) => {
+      console.log({ position });
     });
 
     // Fallback to improve peformance on zoom upodates"
