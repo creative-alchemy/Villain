@@ -4,11 +4,9 @@ import { ReaderContext } from "@/context";
 const NavigationButton = memo(({ action, disabled }) => (
   <button
     style={{
-      width: "20%",
-      minWidth: "100px",
-      height: "100%",
       pointerEvents: "auto",
     }}
+    className="villain-overlay__button"
     onClick={action}
     disabled={disabled}
   />
