@@ -35,8 +35,8 @@ Villain.propTypes = {
   options: PropTypes.shape({
     theme: PropTypes.string,
     maxPages: PropTypes.number,
-    allowFullscreen: PropTypes.boolean,
-    allowGlobalShortcuts: PropTypes.boolean,
+    allowFullscreen: PropTypes.bool,
+    allowGlobalShortcuts: PropTypes.bool,
   }),
 };
 
