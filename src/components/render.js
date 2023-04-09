@@ -171,6 +171,10 @@ class CanvasRender extends React.Component {
       this.updateZoomLimits();
     });
 
+    this.viewer.addHandler("canvas-press", ({ position, pointerType }) => {
+      console.log({ pointerType, position });
+    });
+
     // Fallback to improve peformance on zoom upodates"
     // Fix issue with animations and peformance, see:
     // https://github.com/btzr-io/Villain/issues/66
@@ -360,6 +364,9 @@ const CanvasRenderConsumer = React.memo(({ container }) => {
         // Actions
         getPage,
         updateState,
+        // Navigation
+        navigateBackward,
+        navigateForward,
       }) => {
         const shouldRender = ready && !error;
 
@@ -378,6 +385,8 @@ const CanvasRenderConsumer = React.memo(({ container }) => {
               allowFullScreen={allowFullScreen}
               allowGlobalShortcuts={allowGlobalShortcuts}
               updateContextState={updateState}
+              navigateBackward={navigateBackward}
+              navigateForward={navigateForward}
             />
           )
         );
