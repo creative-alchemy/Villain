@@ -1,6 +1,6 @@
 {
   "name": "villain-react",
-  "version": "1.2.0",
+  "version": "1.2.4",
   "description": "An open source web based comic book reader as a react component",
   "main": "./dist/villain.js",
   "scripts": {
@@ -84,6 +84,6 @@
     "worker-loader": "^2.0.0"
   },
   "peerDependencies": {
-    "reakit": "^1.3.11"
+    "reakit": "^1.0.0-beta.14"
   }
 }
