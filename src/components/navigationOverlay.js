@@ -28,7 +28,14 @@ const NavigationOverlay = () => {
           isFirstPage,
           isLastPage,
         }) => (
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              width: "100%",
+              height: "100%",
+            }}
+          >
             <NavigationButton
               action={mangaMode ? navigateForward : navigateBackward}
               disabled={mangaMode ? isLastPage : isFirstPage}
