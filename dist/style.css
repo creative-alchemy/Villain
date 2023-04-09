@@ -183,7 +183,6 @@
   will-change: transform, height, opacity;
 }
 .villain-menu__animated-content[data-animation="true"] {
-  pointer-events: none;
   overflow: hidden;
 }
 .villain-menu__header .villain-menu__item {
@@ -447,7 +446,6 @@
   z-index: 99;
   padding: 4px 8px;
   border-radius: 4px;
-  margin-bottom: 8px;
 }
 .villain-tooltip--slider {
   left: 50%;
