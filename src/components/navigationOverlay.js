@@ -3,7 +3,12 @@ import { ReaderContext } from "@/context";
 
 const NavigationButton = memo(({ action, disabled }) => (
   <button
-    style={{ width: "20%", minWidth: "100px", height: "100%" }}
+    style={{
+      width: "20%",
+      minWidth: "100px",
+      height: "100%",
+      pointerEvents: "auto",
+    }}
     onClick={action}
     disabled={disabled}
   />
@@ -18,6 +23,7 @@ const NavigationOverlay = () => {
         position: "absolute",
         left: "0",
         top: "0",
+        pointerEvents: "none",
       }}
     >
       <ReaderContext.Consumer>
