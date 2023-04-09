@@ -1,20 +1,20 @@
-import React from 'react'
-import clsx from 'clsx'
-import PropTypes from 'prop-types'
-import Wrapp from '@/components/wrapp'
-import OptionsConsumer from '@/components/options'
-import KeyboardConsumer from '@/components/keyboard'
-import UncompressConsumer from '@/components/uncompress'
-import CanvasRenderConsumer from '@/components/render'
-import { ReaderContext, ReaderProvider } from '@/context'
+import React from "react";
+import clsx from "clsx";
+import PropTypes from "prop-types";
+import Wrapp from "@/components/wrapp";
+import OptionsConsumer from "@/components/options";
+import KeyboardConsumer from "@/components/keyboard";
+import UncompressConsumer from "@/components/uncompress";
+import CanvasRenderConsumer from "@/components/render";
+import { ReaderContext, ReaderProvider } from "@/context";
 // Styles
-// import '@/css'
+// import "@/css";
 
 const Villain = ({ source, style, className, options, workerUrl }) => {
   return (
     <ReaderProvider externalOptions={options}>
       <Wrapp className={className} style={style}>
-        {container => (
+        {(container) => (
           <React.Fragment>
             <KeyboardConsumer container={container} />
             <OptionsConsumer options={options} />
@@ -24,8 +24,8 @@ const Villain = ({ source, style, className, options, workerUrl }) => {
         )}
       </Wrapp>
     </ReaderProvider>
-  )
-}
+  );
+};
 
 Villain.propTypes = {
   source: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Blob)]),
@@ -37,6 +37,6 @@ Villain.propTypes = {
     allowFullscreen: PropTypes.boolean,
     allowGlobalShortcuts: PropTypes.boolean,
   }),
-}
+};
 
-export default React.memo(Villain)
+export default React.memo(Villain);
