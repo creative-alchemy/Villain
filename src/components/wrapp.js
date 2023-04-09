@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { ReaderContext } from "@/context";
 import clsx from "clsx";
 import Localize from "@/localize";
