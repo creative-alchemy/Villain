@@ -139,8 +139,16 @@ class CanvasRender extends React.Component {
   };
 
   initOpenSeaDragon = () => {
-    const { id, container, pages, renderError, updateContextState } =
-      this.props;
+    const {
+      id,
+      container,
+      pages,
+      renderError,
+      updateContextState,
+      navigateForward,
+      navigateBackward,
+      mangaMode,
+    } = this.props;
 
     // Detect browser vendor
     this.browser = getKeyByValue(
@@ -171,12 +179,13 @@ class CanvasRender extends React.Component {
       this.updateZoomLimits();
     });
 
-    this.viewer.addHandler("canvas-press", ({ position }) => {
-      console.log({ position });
-    });
-
     this.viewer.addHandler("canvas-click", ({ position }) => {
-      console.log({ position });
+      const leftBoundary = window.innerWidth * 0.2;
+      const rightBoundary = window.innerWidth * 0.8;
+      if (position.x < leftBoundary && mangaMode) navigateForward;
+      if (position.x < leftBoundary && !mangaMode) navigateBackward;
+      if (position.x > rightBoundary && mangaMode) navigateBackward;
+      if (position.x > rightBoundary && !mangaMode) navigateForward;
     });
 
     // Fallback to improve peformance on zoom upodates"
