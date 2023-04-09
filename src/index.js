@@ -7,6 +7,7 @@ import KeyboardConsumer from "@/components/keyboard";
 import UncompressConsumer from "@/components/uncompress";
 import CanvasRenderConsumer from "@/components/render";
 import { ReaderContext, ReaderProvider } from "@/context";
+import NavigationOverlay from "./components/navigationOverlay";
 // Styles
 // import "@/css";
 
@@ -20,6 +21,7 @@ const Villain = ({ source, style, className, options, workerUrl }) => {
             <OptionsConsumer options={options} />
             <UncompressConsumer source={source} workerUrl={workerUrl} />
             <CanvasRenderConsumer container={container} />
+            <NavigationOverlay />
           </React.Fragment>
         )}
       </Wrapp>

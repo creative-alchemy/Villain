@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from "react";
 import { ReaderContext } from "@/context";
 import clsx from "clsx";
 import Localize from "@/localize";
-import NavigationOverlay from "./navigationOverlay";
 
 const Wrapper = React.forwardRef(
   ({ style, children, className, ...contextState }, ref) => {
@@ -46,7 +45,6 @@ const WrapperConsumer = ({ children, ...props }) => {
             language={language}
           >
             {children(containerRef ? containerRef.current : null)}
-            <NavigationOverlay />
           </PureWrapper>
         );
       }}
