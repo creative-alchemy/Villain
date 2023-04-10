@@ -1,23 +1,24 @@
-import React from 'react'
-import Button from '@/components/toolbar/button'
-import { ReaderContext } from '@/context'
-import { mdiBookOpen, mdiBookOpenOutline } from '@mdi/js'
+import React from "react";
+import Button from "@/components/toolbar/button";
+import { ReaderContext } from "@/context";
+import { mdiBookOpen, mdiBookOpenOutline } from "@mdi/js";
 
 const LayoutButton = React.memo(
   ({ disabled, bookMode, toggleSetting, allowFullScreen }) => {
     return (
       <Button
-        typeClass={'icon'}
+        typeClass={"icon"}
+        id="villain-toolbar__layout-controls"
         icon={bookMode ? mdiBookOpen : mdiBookOpenOutline}
-        onClick={() => toggleSetting('bookMode')}
+        onClick={() => toggleSetting("bookMode")}
         disabled={disabled}
-        tooltip={bookMode ? 'Page view' : 'Book view'}
-        tooltipPlacement={allowFullScreen ? 'top' : 'top-end'}
+        tooltip={bookMode ? "Page view" : "Book view"}
+        tooltipPlacement={allowFullScreen ? "top" : "top-end"}
         focusable
       />
-    )
+    );
   }
-)
+);
 
 const LayoutConsumer = React.memo(({ disabled }) => (
   <ReaderContext.Consumer>
@@ -30,6 +31,6 @@ const LayoutConsumer = React.memo(({ disabled }) => (
       />
     )}
   </ReaderContext.Consumer>
-))
+));
 
-export default LayoutConsumer
+export default LayoutConsumer;

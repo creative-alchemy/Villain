@@ -1,26 +1,26 @@
-import React from 'react'
-import Button from '@/components/toolbar/button'
-import { ReaderContext } from '@/context'
-import { mdiFullscreen, mdiFullscreenExit } from '@mdi/js'
-import { toggleFullscreen } from '@/lib/full-screen'
+import React from "react";
+import Button from "@/components/toolbar/button";
+import { ReaderContext } from "@/context";
+import { mdiFullscreen, mdiFullscreenExit } from "@mdi/js";
+import { toggleFullscreen } from "@/lib/full-screen";
 
 const FullscreenButton = React.memo(({ fullscreen, container, disabled }) => {
   const handleToggleFullscreen = () => {
-    toggleFullscreen(container)
-  }
+    toggleFullscreen(container);
+  };
 
   return (
     <Button
-      typeClass={'icon'}
+      typeClass={"icon"}
       icon={fullscreen ? mdiFullscreenExit : mdiFullscreen}
       onClick={handleToggleFullscreen}
       disabled={disabled}
-      tooltip={fullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
-      tooltipPlacement={'top-end'}
+      tooltip={fullscreen ? "Exit fullscreen" : "Enter fullscreen"}
+      tooltipPlacement={"top-end"}
       focusable
     />
-  )
-})
+  );
+});
 
 const FullscreenConsumer = React.memo(({ container, disabled }) => (
   <ReaderContext.Consumer>
@@ -35,6 +35,6 @@ const FullscreenConsumer = React.memo(({ container, disabled }) => (
       )
     }
   </ReaderContext.Consumer>
-))
+));
 
-export default FullscreenConsumer
+export default FullscreenConsumer;
