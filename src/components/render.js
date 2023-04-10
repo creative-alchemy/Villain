@@ -181,10 +181,12 @@ class CanvasRender extends React.Component {
       this.updateZoomLimits();
     });
 
-    this.viewer.addHandler("canvas-click", ({ position }) => {
+    this.viewer.addHandler("canvas-click", ({ position, quick }) => {
+      // Exit early if this is a drag event
+      if (!quick) return;
+
       const leftBoundary = window.innerWidth * 0.2;
       const rightBoundary = window.innerWidth * 0.8;
-      console.log({ positionX: position.x, leftBoundary, rightBoundary });
       if (position.x < leftBoundary && mangaMode && !isLastPage)
         navigateForward();
       if (position.x < leftBoundary && !mangaMode && !isFirstPage)
