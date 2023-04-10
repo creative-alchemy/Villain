@@ -182,6 +182,7 @@ class CanvasRender extends React.Component {
     this.viewer.addHandler("canvas-click", ({ position }) => {
       const leftBoundary = window.innerWidth * 0.2;
       const rightBoundary = window.innerWidth * 0.8;
+      console.log({ positionX: position.x, leftBoundary, rightBoundary });
       if (position.x < leftBoundary && mangaMode) navigateForward;
       if (position.x < leftBoundary && !mangaMode) navigateBackward;
       if (position.x > rightBoundary && mangaMode) navigateBackward;
