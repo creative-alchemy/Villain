@@ -148,6 +148,8 @@ class CanvasRender extends React.Component {
       navigateForward,
       navigateBackward,
       mangaMode,
+      isLastPage,
+      isFirstPage,
     } = this.props;
 
     // Detect browser vendor
@@ -183,10 +185,14 @@ class CanvasRender extends React.Component {
       const leftBoundary = window.innerWidth * 0.2;
       const rightBoundary = window.innerWidth * 0.8;
       console.log({ positionX: position.x, leftBoundary, rightBoundary });
-      if (position.x < leftBoundary && mangaMode) navigateForward;
-      if (position.x < leftBoundary && !mangaMode) navigateBackward;
-      if (position.x > rightBoundary && mangaMode) navigateBackward;
-      if (position.x > rightBoundary && !mangaMode) navigateForward;
+      if (position.x < leftBoundary && mangaMode && !isLastPage)
+        navigateForward();
+      if (position.x < leftBoundary && !mangaMode && !isFirstPage)
+        navigateBackward();
+      if (position.x > rightBoundary && mangaMode && !isFirstPage)
+        navigateBackward();
+      if (position.x > rightBoundary && !mangaMode && !isLastPage)
+        navigateForward();
     });
 
     // Fallback to improve peformance on zoom upodates"
@@ -381,6 +387,8 @@ const CanvasRenderConsumer = React.memo(({ container }) => {
         // Navigation
         navigateBackward,
         navigateForward,
+        isLastPage,
+        isFirstPage,
       }) => {
         const shouldRender = ready && !error;
 
@@ -401,6 +409,8 @@ const CanvasRenderConsumer = React.memo(({ container }) => {
               updateContextState={updateState}
               navigateBackward={navigateBackward}
               navigateForward={navigateForward}
+              isLastPage={isLastPage}
+              isFirstPage={isFirstPage}
             />
           )
         );
